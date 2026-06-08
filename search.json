@@ -2874,7 +2874,7 @@
     "href": "Courses/mlwr2_2025/fullslides_course_intro.html#introduction",
     "title": "Course Introduction",
     "section": "Introduction",
-    "text": "Introduction\n\nMain topic: Non-linear Models\nArtificial Neural Networks, Deep Learning basic.\nExpected Learning outcomes: \\[\n\\text{Understanding} &gt; \\text{Implementation} &gt;0\n  \\]\n3 credits \\(\\approx\\) 4 weeks\n4 weeks \\(+\\) Pre knowledge from Part I \\(=\\) A challenge\nSo, my strategy (plan (design)) is…"
+    "text": "Introduction\n\nMain topic: Non-linear Models\nArtificial Neural Networks, Deep Learning basic, CNN\n\n\n\nExpected Learning outcomes: \\[\n\\text{Understanding} &gt; \\text{Implementation}\n  \\]\nGoal: understand the underlying logic and can explain the basic ideas with your families.\n\n\n\n\n3 credits \\(\\approx\\) 4 weeks\n4 weeks \\(+\\) Pre knowledge from Part I \\(\\to\\) A challenge\nSo, my strategy (plan (design)) is…"
   },
   {
     "objectID": "Courses/mlwr2_2025/fullslides_course_intro.html#course-design",
@@ -2923,7 +2923,7 @@
     "href": "Courses/mlwr2_2025/fullslides_course_intro.html#teaching-methods",
     "title": "Course Introduction",
     "section": "Teaching Methods",
-    "text": "Teaching Methods\n\nOnline course \\(\\to\\) Flipped classroom method\nRead and study learning materials\nTwo Zoom meetings. In each meeting,\n\nDiscussion and Q/A \\(\\approx 1\\) hour.\nLab session \\(\\approx 2\\) hours.\n\nCommunication: Canvas messages"
+    "text": "Teaching Methods\n\nOnline course \\(\\to\\) Flipped classroom method\nRead and study learning materials\n\n\n\nTwo Zoom meetings. In each meeting,\n\nDiscussion and Q/A \\(\\approx 1\\) hour.\nLab session \\(\\approx 2\\) hours.\n\nCommunication: Canvas messages"
   },
   {
     "objectID": "Courses/mlwr2_2025/fullslides_course_intro.html#learning-materials",
@@ -2937,7 +2937,7 @@
     "href": "Courses/mlwr2_2025/fullslides_course_intro.html#exam-mandatory",
     "title": "Course Introduction",
     "section": "Exam (Mandatory)",
-    "text": "Exam (Mandatory)\n\nProject study\nMaximum two students\nSuggested problems or topics you are interested in\nOral exam:\n\nIndividual meeting on Zoom\nDiscuss your project study\nOther course related questions\n\nTimetable: check it on Canvas"
+    "text": "Exam (Mandatory)\n\nProject study\nSolo or Team work (Maximum two students)\nSuggested problems or topics you are interested in\nOral exam:\n\nIndividual meeting on Zoom\nDiscuss your project study\nOther course related questions\n\nTimetable: check it on Canvas"
   },
   {
     "objectID": "Courses/mlwr2_2025/l3/l3_lab_task_2.html",
@@ -3287,7 +3287,7 @@
     "href": "Courses/mlwr2_2025/mlwr2_index.html#full-slides-for-course-introduction",
     "title": "Machine Learning with R, Part 2",
     "section": "Full slides for course introduction",
-    "text": "Full slides for course introduction"
+    "text": "Full slides for course introduction\nClick here"
   },
   {
     "objectID": "Courses/mlwr2_2025/mlwr2_index.html#list-of-lectures",
@@ -4274,6 +4274,6 @@
     "href": "Courses/mlwr2_2025/fullslides_course_intro.html#about-me",
     "title": "Course Introduction",
     "section": "About me",
-    "text": "About me"
+    "text": "About me\n\n\n\nI also want to get to know you. Let’s use Menti."
   }
 ]
