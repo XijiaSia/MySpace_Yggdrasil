@@ -296,15 +296,18 @@ window.Quarto = {
 <p><strong>Task 1.4</strong>: Image reconstruction. Reconstruct an image in your data set by its first 30, 60, 100, 150, and 200 principal components separately. Put the original image and five approximated images in one plot. For each approximated image, calculate and report the mean square errors.</p>
 <p>This also can be done by matrix calculation. However, we will do it by for loop first since it is more understandable. Next, I will reconstruct the 8th image of number 4.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">=</span> <span class="dv">150</span> <span class="co"># we use k PCs to reconstruct the image</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x_hat <span class="ot">=</span> Z[<span class="dv">8</span>,<span class="dv">1</span>]<span class="sc">*</span>W[,<span class="dv">1</span>]</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>k){</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  x_hat <span class="ot">=</span> x_hat <span class="sc">+</span> Z[<span class="dv">8</span>,i]<span class="sc">*</span>W[,i]</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># vis</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">pin =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>))</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">=</span> <span class="fu">matrix</span>(x_hat[<span class="dv">256</span><span class="sc">:</span><span class="dv">1</span>],<span class="dv">16</span>,<span class="dv">16</span>,<span class="at">byrow=</span>T)[,<span class="dv">16</span><span class="sc">:</span><span class="dv">1</span>]</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(<span class="fu">t</span>(temp), <span class="at">col=</span><span class="fu">cus_col</span>(<span class="dv">256</span>), <span class="at">frame =</span> T, <span class="at">axes =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall recipe law: weighted sum of all ingredients</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># weights: PCs values</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ingredients: eigen vectors</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>k <span class="ot">=</span> <span class="dv">150</span> <span class="co"># we use k PCs to reconstruct the image</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>x_hat <span class="ot">=</span> Z[<span class="dv">8</span>,<span class="dv">1</span>]<span class="sc">*</span>W[,<span class="dv">1</span>] <span class="co"># x_hat is the bowl, and we put the right amount of W[,1] into it.</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>k){</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  x_hat <span class="ot">=</span> x_hat <span class="sc">+</span> Z[<span class="dv">8</span>,i]<span class="sc">*</span>W[,i] <span class="co"># continuously add more ingredients into the bowl</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># vis</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">pin =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>))</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">=</span> <span class="fu">matrix</span>(x_hat[<span class="dv">256</span><span class="sc">:</span><span class="dv">1</span>],<span class="dv">16</span>,<span class="dv">16</span>,<span class="at">byrow=</span>T)[,<span class="dv">16</span><span class="sc">:</span><span class="dv">1</span>]</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(<span class="fu">t</span>(temp), <span class="at">col=</span><span class="fu">cus_col</span>(<span class="dv">256</span>), <span class="at">frame =</span> T, <span class="at">axes =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
